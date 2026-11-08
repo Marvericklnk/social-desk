@@ -1,24 +1,29 @@
 # SocialDesk
 
-A minimalist social media content management website in electric blue, white and icy blue.
+A minimalist social media management website using an electric-blue, crisp-white and icy-blue design.
 
-## Live website
+## Publish the website
 
-Once GitHub Pages is enabled for this repository, open:
-https://marvericklnk.github.io/social-desk/
-
-## GitHub Pages setup
-
-In the GitHub repository, open **Settings → Pages**. Under **Build and deployment**, choose **Deploy from a branch**, select **main** and **/(root)**, and click **Save**. GitHub publishes the root index.html.
+1. In this repository, open **Settings** → **Pages**.
+2. Under **Build and deployment**, select **Deploy from a branch**.
+3. Select branch **main** and folder **/(root)**.
+4. Click **Save**.
+5. When GitHub Pages finishes deployment, the website will be at: https://marvericklnk.github.io/social-desk/
 
 ## Features
 
-- Home, Clients and Posts pages with working navigation.
-- Add, edit and delete clients and posts.
-- Optional client association and Draft / Ready / Published status for posts.
-- Client and post data stored in the current browser using localStorage.
-- Mobile-friendly layout.
+- Home, Clients and Posts pages.
+- Responsive navigation and mobile-friendly layout.
+- Create, edit, and delete clients and posts.
+- Optional client association and status for posts.
+- Browser-local persistence via localStorage.
 
-This is a front-end demonstration. Data is **not synchronized across devices**, and choosing the Published status **does not publish content to any social network**. Secure accounts, shared databases and platform APIs require a backend.
+## Important limitations
 
-The repository also contains the React + Vite version under the react-app folder, which is intended for development in VS Code.
+This is a static front-end prototype, implemented with HTML, CSS and JavaScript so it can be hosted directly through GitHub Pages without a build step. The earlier React/Vite project is supplied separately as a downloadable ZIP in the ChatGPT conversation; it has not been copied into this repository.
+
+Data is stored only in the current browser and does not sync across devices. Marking a post as “Published” is only an organizational label; it does not publish to an external social media platform. A production multiuser product would need authentication, a database, backend security and platform API integrations.
+
+## Local development
+
+Download the repository and open `index.html` in a browser.
