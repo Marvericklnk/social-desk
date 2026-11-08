@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#eef8ff" />
+  <meta name="description" content="SocialDesk — Plan, write, and manage your social media content." />
+  <title>SocialDesk — Create and Manage Posts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css" />
+  <script defer src="./app.js"></script>
+</head>
+<body>
+  <div class="site">
+    <header class="header">
+      <a href="#home" class="brand" aria-label="SocialDesk Home">
+        <svg class="logo" viewBox="0 0 48 56" aria-hidden="true"><path d="M24 4 43 14 43 23 24 33 5 23 5 14Z M5 33 24 43 43 33 M5 43 24 52 43 43" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="square" stroke-linejoin="round"/><path d="M5 23 24 13 43 23 M5 43 24 33 43 43" fill="none" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/></svg>
+        <span>Social<span class="accent">Desk</span></span>
+      </a>
+      <nav aria-label="Main navigation"><a data-nav="home" href="#home">Home</a><a data-nav="clients" href="#clients">Clients</a><a data-nav="posts" href="#posts">Posts</a></nav>
+    </header>
+    <main id="content">
+      <section class="page home" data-page="home">
+        <div class="eyebrow">SOCIALDESK <span class="rule"></span></div>
+        <h1>Create and Manage <em>Posts</em></h1>
+        <p class="subtitle">Plan, write, and track your social media content.</p>
+        <button class="primary" data-action="new-post"><span class="plus">+</span>Create Post</button>
+      </section>
+      <section class="page inside" data-page="clients" hidden>
+        <div class="eyebrow">SOCIALDESK <span class="rule"></span></div>
+        <h1>Clients</h1>
+        <p class="subtitle">Manage your clients and their social media accounts.</p>
+        <div id="clients-list" class="copy-list" aria-live="polite"></div>
+        <button class="primary" data-action="new-client"><span class="plus">+</span>Add Client</button>
+      </section>
+      <section class="page inside" data-page="posts" hidden>
+        <div class="eyebrow">SOCIALDESK <span class="rule"></span></div>
+        <h1>Posts</h1>
+        <p class="subtitle">Create, manage, and publish your social media content from one place.</p>
+        <div id="posts-list" class="copy-list" aria-live="polite"></div>
+        <button class="primary" data-action="new-post"><span class="plus">+</span>Create Post</button>
+      </section>
+    </main>
+    <div class="wave" aria-hidden="true"><svg viewBox="0 0 1440 180" preserveAspectRatio="none"><path d="M0 28 C170 10 245 177 505 170 C780 163 860 20 1100 55 C1250 74 1360 20 1440 20 L1440 180 L0 180 Z" fill="#dceeff"/></svg></div>
+  </div>
+  <div id="modal" class="overlay" hidden>
+    <form id="edit-form" class="dialog">
+      <div class="dialog-heading"><h2 id="form-title">Create Post</h2><button id="close" type="button" aria-label="Close" class="close">×</button></div>
+      <label><span id="name-label">Post title</span><input id="entry-name" name="name" type="text" maxlength="120" required autocomplete="off" placeholder="Enter a title" /></label>
+      <label><span id="description-label">Post content</span><textarea id="entry-description" maxlength="5000" rows="5" placeholder="Write here..."></textarea></label>
+      <div id="post-fields">
+        <label>Client (optional)<select id="entry-client"><option value="">No client</option></select></label>
+        <label>Status<select id="entry-status"><option value="Draft">Draft</option><option value="Ready">Ready</option><option value="Published">Published</option></select></label>
+      </div>
+      <button type="submit" class="primary save">Save</button>
+      <p class="hint">Your entries are saved in this browser only. This demo does not publish to social networks.</p>
+    </form>
+  </div>
+</body>
+</html>
